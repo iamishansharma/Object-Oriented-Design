@@ -1,9 +1,9 @@
 /*
     Requirements -> 
-    https://www.youtube.com/watch?v=7LaKmNfMCAo&list=PL12BCqE-Lp650Cg6FZW7SoZwN8Rw1WJI7&index=5&ab_channel=SoumyajitBhattacharyay
+    https://youtu.be/7LaKmNfMCAo
 */
 
-class BookMyShow {
+public class BookMyShow {
     List<City> city;
 
     public List<Movie> getMovies(Date date, String city);
@@ -11,14 +11,14 @@ class BookMyShow {
     public List<Cinema> getCinemas(String cityName);
 }
 
-class City {
+public class City {
     Integer CityID;
     String cityName;
 
     List<Cinema> cinemas;
 }
 
-class Cinemas {
+public class Cinemas {
     Integer CinemaID;
     String cinemaName;
 
@@ -29,14 +29,14 @@ class Cinemas {
     public Map<Date, Show> getShows(List<Date> dateList);
 }
 
-class Audi {
+public class Audi {
     Integer AudiID;
     Integer capacity;
 
     List<Show> shows;
 }
 
-class Movie {
+public class Movie {
     String movieName;
     Language language;
     Genre genre;
@@ -44,7 +44,7 @@ class Movie {
     Integer MovieID;
 }
 
-class Show {
+public class Show {
     Integer ShowID;
     Movie movie;
     Date startTime;
@@ -62,7 +62,7 @@ public enum Language {
     ENGISH, HINDI, TAMIL
 }
 
-class Seat {
+public class Seat {
     Integer seatNumber;
     SeatType seatType;
     SeatStatus seatStatus;
@@ -77,7 +77,7 @@ public enum SeatStatus {
     AVAILABLE, BOOKED, RESERVED, NOT_AVAILABLE
 }
 
-class Search {
+public class Search {
     public List<Movie> searchByTitle(String title);
 
     public List<Movie> searchByLanguage(Language language);
@@ -89,7 +89,7 @@ class Search {
     public List<Movie> searchByCityName(City city);
 }
 
-class User {
+public class User {
     Integer userId;
     Search search;
     Credentials credentials;
@@ -98,12 +98,12 @@ class User {
     Address address;
 }
 
-public class Credentials {
+public public class Credentials {
     String userName;
     String password;
 }
 
-class Customer extends User {
+public class Customer extends User {
 
     public Booking makeBooking(Booking booking);
 
@@ -111,14 +111,14 @@ class Customer extends User {
 
 }
 
-class Admin extends User {
+public class Admin extends User {
 
     public boolean addMovie(Movie movie);
 
     public boolean addShow(Show show);
 }
 
-class Booking {
+public class Booking {
     Integer BookingID;
     Date bookingDate;
     City city;
@@ -133,7 +133,7 @@ class Booking {
     public boolean makePayment(Payment Payment);
 }
 
-class Payment {
+public class Payment {
     Double amount;
     Date paymentDate;
     Integer transactionID;
